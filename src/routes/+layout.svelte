@@ -16,12 +16,14 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 1em 0;
+        margin: 0%;
+        background-color: #ffc5bb;
     }
 
     nav a {
-        margin: 0 1em;
+        margin: 0.5em 1em;
     }
+    
     div {
         display: flex;
         align-items: center;
