@@ -1,13 +1,10 @@
 <script>
-    import ThemeToggle from "../components/ThemeToggle.svelte";
-
 	let { children } = $props();
 </script>
 
 <nav>
 	<a href="/">home</a>
 	<a href="/blog">blog</a>
-    <ThemeToggle />
 </nav>
 
 <div>
