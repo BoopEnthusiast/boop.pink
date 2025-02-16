@@ -1,11 +1,34 @@
-/* The main colors are from this https://lospec.com/palette-list/wisteria-mystery
+/* The main colors are from this https://lospec.com/palette-list/wisteria-mystery https://lospec.com/palette-list/toti-froti https://lospec.com/palette-list/june-flower https://lospec.com/palette-list/star-pop https://lospec.com/palette-list/heart4
 *  #ffffdb #ffc5bb #ff99a1 #a06689 
 */
+
+:root {
+    --background-color: #575270;
+    --text-color: #cf93aa;
+    --accent-color-1: #627fa6;
+    --accent-color-2: #d6d0a5;
+
+    /* --background-color: #ffffff;
+    --text-color: #8b37ba;
+    --accent-color-1: #beabff;
+    --accent-color-2: #ca70b1; */
+
+    /* --background-color: #575270;
+    --text-color: #cf93aa;
+    --accent-color-1: #627fa6;
+    --accent-color-2: #d6d0a5; */
+
+    /* --background-color: #674577;
+    --text-color: #ffebe5;
+    --accent-color-1: #64b9ca;
+    --accent-color-2: #ffa3d6; */
+}
+
 html {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: large;
-    background-color: #ffffdb;
-    color: #a06689;
+    background-color: #575270;
+    color: #cf93aa;
 }
 
 body {
