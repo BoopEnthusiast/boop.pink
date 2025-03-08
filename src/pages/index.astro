@@ -1,20 +1,36 @@
 ---
+// Get HTML skeleton
 import Layout from '../layouts/Layout.astro';
 
+// Name the page
 const pageTitle = "Home Page";
 
+// Get all files from daily folder
 const dailyPosts = import.meta.glob('./daily/*.{md,mdx}', { eager: true });
 
-for (let post in dailyPosts) {
-	console.log(post);
-}
+// Change the frontmatter so that it can be accessed later on, since none of my files have a frontmatter and I don't want to write one
+const modifiedDailyPosts = Object.fromEntries(
+	// Go through all the entries and replace frontmatter
+	Object.entries(dailyPosts).map(([key, post]: [string, any]) => {
+		// Make their new title by removing all of the fluff
+		const newTitle = key.replace('./daily/', '').replace('.md', '').replace('.mdx', '').replaceAll('-', '/');
+		
+		// Make the new frontmatter
+		const modifiedFrontmatter = {
+			...post.frontmatter,
+			title: newTitle,
+		};
 
-//console.log(dailyPosts);
+		// Send the frontmatter back
+		return [key, { ...post, frontmatter: modifiedFrontmatter }];
+	// Reverse the list so that newest ones appear at the top
+	}).reverse()
+);
 ---
 
 <Layout>
 	<h1>{pageTitle}</h1>
 	<ul>
-		{Object.values(dailyPosts).map((page: any) => <li><a href={page.url}></a>{page.url}</li>)}
+		{Object.values(modifiedDailyPosts).map((page: any) => <li><a href={page.url}>{page.frontmatter.title}</a></li>)}
 	</ul>
 </Layout>
