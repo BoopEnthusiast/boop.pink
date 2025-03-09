@@ -36,7 +36,10 @@ const modifiedDailyPosts = Object.fromEntries(
 
 <Layout>
 	<main>
-		<h1>Boop's Blog!</h1>
+		<div>
+			<h1>Boop's Blog!</h1>
+			<a href="/rss.xml"><img src="/public/Feed-icon.svg"></a>
+		</div>
 		{Object.values(modifiedDailyPosts).map((page: any) => <a href={page.url}>{page.frontmatter.title}</a>)}
 		<footer>
 			<h4><a href="https://boop.website">My Home Website</a></h4>
@@ -52,4 +55,17 @@ const modifiedDailyPosts = Object.fromEntries(
 		align-items: center;
 		text-align: center;
 	}
+
+	div { 
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	img {
+		width: 30px;
+		margin-left: 30px;
+		float: right;
+	}
+
 </style>
