@@ -1,9 +1,11 @@
 ---
-import '../styles/global.css'
+import '../styles/global.css';
+import Layout from './Layout.astro';
 ---
 
-
-<div>
-    <h1> Hello </h1>
+<Layout>
+    <header>
+        <a href="/">Home</a>
+    </header>
     <slot />
-</div>
+</Layout>
