@@ -10,12 +10,22 @@ const modifiedDailyPosts = Object.fromEntries(
 	// Go through all the entries and replace frontmatter
 	Object.entries(dailyPosts).map(([key, post]: [string, any]) => {
 		// Make their new title by removing all of the fluff
-		const newTitle = key.replace('./daily/', '').replace('.md', '').replace('.mdx', '').replaceAll('-', '/');
+		let newTitle = key.replace('./daily/', '').replace('.md', '').replace('.mdx', '').replaceAll('-', '/');
 		
+		// If post already has title, append it
+		newTitle = post.frontmatter.title ? newTitle + " - " + post.frontmatter.title : newTitle
+
+		// Append all headings to the name of it, too
+		const headings = post.getHeadings() 
+		for (let heading in headings) {
+			newTitle = newTitle + " - " + headings[heading].text;
+		}
+
 		// Make the new frontmatter
 		const modifiedFrontmatter = {
 			...post.frontmatter,
 			title: newTitle,
+			layout: '../../layouts/MarkdownLayout.astro',
 		};
 
 		// Send the frontmatter back
@@ -26,15 +36,17 @@ const modifiedDailyPosts = Object.fromEntries(
 ---
 
 <Layout>
-	<h1>Home Page</h1>
-	<ul>
-		{Object.values(modifiedDailyPosts).map((page: any) => <li><a href={page.url}>{page.frontmatter.title}</a></li>)}
-	</ul>
+	<main>
+		<h1>Boop's Blog!</h1>
+		{Object.values(modifiedDailyPosts).map((page: any) => <a href={page.url}>{page.frontmatter.title}</a>)}
+	</main>
 </Layout>
 
 <style>
-	Layout {
+	main {
+		display: flex;
+		flex-direction: column;
 		align-items: center;
-
+		text-align: center;
 	}
 </style>
