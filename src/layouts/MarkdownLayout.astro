@@ -5,13 +5,13 @@ import Layout from './Layout.astro';
 
 <Layout>
     <div id="container">
-        <header>
+        <nav>
             <a href="/">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
                 </svg>
             </a>
-        </header>
+        </nav>
         <main>
             <div>
                 <slot />
@@ -23,27 +23,31 @@ import Layout from './Layout.astro';
 
 <style>
     #container {
-        margin: 30px;
-    }
-
-    main {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    main div {
-
+        position: relative;
+        margin: 20px auto;
         max-width: 700px;
     }
 
-    header {
-        width: 40px;
+    main {
+        display: block;
+    }
+
+    main div {
+        max-width: 700px;
+        shape-outside: margin-box;
+        float: none;
+    }
+
+    nav {
         float: right;
+        width: 40px;
+        margin-left: 15px;
+        margin-bottom: 10px;
         color: var(--accent-color-2);
         background-color: var(--accent-color-1);
         border-radius: 5px;
+        min-height: 40px;
+        shape-outside: margin-box;
     }
 
     svg {
