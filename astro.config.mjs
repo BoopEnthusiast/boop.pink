@@ -7,4 +7,5 @@ export default defineConfig({
     markdown: {
         remarkPlugins: [markdownStylization]
     },
+    site: 'https://boop.pink',
 });

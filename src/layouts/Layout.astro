@@ -10,6 +10,14 @@ import '../styles/global.css'
 		<!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
 		<meta name="generator" content={Astro.generator} />
 		<title>Boop's Blog</title>
+
+		<link
+			rel="alternate"
+			type="application/rss+xml"
+			title="Boop's Blog"
+			href={new URL("rss.xml", Astro.site)}
+		/>
+		
 	</head>
 	<body>
 		<slot />
