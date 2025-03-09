@@ -1,8 +1,14 @@
 :root {
-    --background-color: #575270;
+    /* https://lospec.com/palette-list/neon-night-sky */
+    --background-color: #131626;
+    --text-color: #ffe6ea;
+    --accent-color-1: #e6a1cf;
+    --accent-color-2: #4d4d80;
+
+    /* --background-color: #575270;
     --text-color: #cf93aa;
     --accent-color-1: #627fa6;
-    --accent-color-2: #d6d0a5;
+    --accent-color-2: #d6d0a5; */
 
     /* --background-color: #ffffff;
     --text-color: #8b37ba;
@@ -26,5 +32,5 @@ html {
 }
 
 a:visited {
-    color: var(--text-color);
+    color: var(--accent-color-1);
 }
