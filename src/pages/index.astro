@@ -38,6 +38,10 @@ const modifiedDailyPosts = Object.fromEntries(
 	<main>
 		<h1>Boop's Blog!</h1>
 		{Object.values(modifiedDailyPosts).map((page: any) => <a href={page.url}>{page.frontmatter.title}</a>)}
+		<footer>
+			<h4><a href="https://boop.website">My Home Website</a></h4>
+			<h4><a href="https://boop.cool">My Portfolio Website (has all websites on it)</a></h4>
+		</footer>
 	</main>
 </Layout>
 
