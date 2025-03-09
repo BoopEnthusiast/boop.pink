@@ -37,7 +37,7 @@ const modifiedDailyPosts = Object.fromEntries(
 <Layout>
 	<main>
 		<h1>Boop's Blog!</h1>
-		<a href="/rss.xml"><img src="/public/Feed-icon.svg"></a>
+		<a href="/rss.xml"><img src="/Feed-icon.svg"></a>
 		{Object.values(modifiedDailyPosts).map((page: any) => <a href={page.url}>{page.frontmatter.title}</a>)}
 		<footer>
 			<h4><a href="https://boop.website">My Home Website</a></h4>
