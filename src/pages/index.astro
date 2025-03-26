@@ -30,7 +30,7 @@ const modifiedDailyPosts = Object.fromEntries(
 		// Send the frontmatter back
 		return [key, { ...post, frontmatter: modifiedFrontmatter }];
 	// Reverse the list so that newest ones appear at the top
-	}).reverse()
+	}).sort(([, a], [, b]) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime())
 );
 ---
 
