@@ -5,7 +5,13 @@ import MarkdownIt from 'markdown-it';
 const parser = new MarkdownIt();
 
 export async function GET(context) {
-    const daily = await getCollection('daily');
+    let daily = await getCollection('daily');
+
+    daily.forEach(post => {
+        const [day, month, year] = post.id.split('-').map(Number);
+        post.data.pubDate = new Date(2000 + year, month - 1, day);
+    });
+
     return rss({
         title: "Boop's Blog",
         description: "A personal blog by Boop",
