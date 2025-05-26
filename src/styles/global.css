@@ -38,3 +38,9 @@ a {
 a:visited {
     color: var(--accent-color-1);
 }
+
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+}
