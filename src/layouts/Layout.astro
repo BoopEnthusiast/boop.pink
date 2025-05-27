@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import { ClientRouter } from 'astro:transitions';
 ---
 
 <!doctype html>
@@ -18,6 +19,7 @@ import '../styles/global.css'
 			href={new URL("rss.xml", Astro.site)}
 		/>
 		
+		<ClientRouter />
 	</head>
 	<body>
 		<slot />

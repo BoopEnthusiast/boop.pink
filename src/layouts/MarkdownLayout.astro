@@ -53,5 +53,34 @@ import Layout from './Layout.astro';
     svg {
         stroke: var(--accent-color-2);
     }
+
+    button {
+        border-radius: 30px;
+
+    }
 }
 </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const images = document.querySelectorAll('img');
+        images.forEach((image => {
+            // Move the image to a container
+            let newImageContainer = document.createElement('div');
+            newImageContainer.className = 'image-container';
+            if (image.parentNode) {
+                image.parentNode.append(newImageContainer);
+            }
+            newImageContainer.appendChild(image);
+
+            // Create new button and add it after the image
+            let newButton = document.createElement('button');
+            let buttonText = document.createTextNode('ALT');
+            newButton.appendChild(buttonText);
+            newImageContainer.appendChild(newButton);
+            newButton.addEventListener('click', () => {
+                alert(image.alt);
+            });
+        }));
+    });
+</script>

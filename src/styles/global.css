@@ -44,3 +44,24 @@ img {
     max-width: 100%;
     height: 100%;
 }
+
+
+.image-container {
+    position: relative;
+    
+}
+
+button {
+    position: absolute;
+    top: 90%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #5559;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}

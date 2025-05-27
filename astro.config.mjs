@@ -8,4 +8,5 @@ export default defineConfig({
         remarkPlugins: [markdownStylization]
     },
     site: 'https://boop.pink',
+    prefetch: true,
 });
